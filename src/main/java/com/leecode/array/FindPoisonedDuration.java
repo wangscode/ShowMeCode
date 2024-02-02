@@ -15,7 +15,7 @@ public class FindPoisonedDuration {
      * @param duration
      * @return
      */
-    public int findPoisonedDuration(int[] timeSeries, int duration) {
+    public int findPoisonedDurationScanning(int[] timeSeries, int duration) {
         int beginTime,endTime,poisonedDuration = 0;
         beginTime = timeSeries[0];
         endTime = beginTime+duration;
@@ -30,5 +30,17 @@ public class FindPoisonedDuration {
         }
         poisonedDuration += endTime - beginTime;
         return poisonedDuration;
+    }
+
+    /**
+     * 重叠解法<br/>
+     * 研究解法想到<br/>
+     * @param timeSeries
+     * @param duration
+     * @return
+     */
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+        int poisonedDuration = timeSeries.length*duration;
+
     }
 }
