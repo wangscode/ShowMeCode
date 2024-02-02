@@ -40,9 +40,9 @@ public class ThirdMax {
     }
 
     /**
-     * 遍历法
-     * 时间复杂度：O(n)，其中 n 是数组 nums 的长度
-     * 空间复杂度：O(1)。
+     * 遍历法<br/>
+     * 时间复杂度：O(n)，其中 n 是数组 nums 的长度<br/>
+     * 空间复杂度：O(1)。<br/>
      * @param nums
      * @return
      */
