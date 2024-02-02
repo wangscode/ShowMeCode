@@ -8,7 +8,7 @@ package com.leecode.array;
 public class FindPoisonedDuration {
 
     /**
-     * 计算法<br/>
+     * 扫描法<br/>
      * 时间复杂度：O(n)，其中 n 是数组 nums 的长度 <br/>
      * 空间复杂度：O(1)。<br/>
      * @param timeSeries
