@@ -33,7 +33,9 @@ public class FindPoisonedDuration {
 
     /**
      * 重叠解法<br/>
-     * 研究解法想到<br/>
+     * 研究解法想到,代码轻便不少<br/>
+     * 时间复杂度：O(n)，其中 n 是数组 nums 的长度(仍需要扫描一遍) <br/>
+     * 空间复杂度：O(1)。<br/>
      *
      * @param timeSeries
      * @param duration
