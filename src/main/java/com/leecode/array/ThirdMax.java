@@ -13,17 +13,18 @@ import java.util.HashSet;
 public class ThirdMax {
 
     public static void main(String[] args) {
+        System.out.println(thirdMaxSort(new int[]{2,2,3,1}));
         System.out.println(thirdMax(new int[]{2,2,3,1}));
     }
 
     /**
      * 排序法
-     * 时间复杂度：O(nlogn)O(n\log n)O(nlogn)，其中 nnn 是数组 nums 的长度。排序需要 O(nlogn) 的时间。
+     * 时间复杂度：O(nlogn)，其中 n 是数组 nums 的长度。排序需要 O(nlogn) 的时间。
      * 空间复杂度：O(logn)。排序需要的栈空间为 O(logn)。
      * @param nums
      * @return
      */
-    public static int thirdMax(int[] nums) {
+    public static int thirdMaxSort(int[] nums) {
         Arrays.sort(nums);
         if(nums.length < 3){
             return nums[nums.length-1];
@@ -36,5 +37,29 @@ public class ThirdMax {
             }
         }
         return nums[nums.length-1];
+    }
+
+    /**
+     * 遍历法
+     * 时间复杂度：O(n)，其中 n 是数组 nums 的长度
+     * 空间复杂度：O(1)。
+     * @param nums
+     * @return
+     */
+    public static int thirdMax(int[] nums) {
+        Integer a = null, b = null, c = null;
+        for (int num : nums) {
+            if (a == null || num > a) {
+                c = b;
+                b = a;
+                a = num;
+            } else if (a > num && (b == null || num > b)) {
+                c = b;
+                b = num;
+            } else if (b != null && b > num && (c == null || num > c)) {
+                c = num;
+            }
+        }
+        return c == null ? a : c;
     }
 }
